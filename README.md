@@ -1,6 +1,6 @@
 # Ableton MCP v2
 
-Consolidated working repo (2026-07-06): upstream [bschoepke/ableton-live-mcp](https://github.com/bschoepke/ableton-live-mcp) plus the local lifecycle, convenience, and fade tools (see "Local additions" below). The `ableton-hermes-operator` skill that documents operating conventions lives in `skills/`. This folder supersedes the reference copies under `bschoepke:ableton-mcp/` and `Mike's Ableton MCP/`.
+Consolidated working repo (2026-07-06): upstream [bschoepke/ableton-live-mcp](https://github.com/bschoepke/ableton-live-mcp) plus the local lifecycle, convenience, and fade tools (see "Local additions" below). The `ableton-hermes-operator` skill that documents operating conventions lives in `skills/`. This folder supersedes the older repos and planning docs, now parked in `../_Archive 2026-07 (pre-v2)/`.
 
 After editing `src/` or `Ableton_Live_MCP/bridge.py`: sync the installed copy at `~/Documents/Codex/ableton-live-mcp`, reinstall the Remote Script (`python3 src/install_remote_script.py`), and reload Live. Verify with `live_ping` — expect runtime `lifecycle-fade-wrappers-1` or later.
 
