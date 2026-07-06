@@ -28,6 +28,16 @@ Back up your Live Set before using this. The MCP can edit your set directly and 
 
 `Update the https://github.com/bschoepke/ableton-live-mcp MCP server for me`
 
+## Provenance — source MCPs
+
+This repo was consolidated from three Ableton MCP projects (full comparison in `_Archive 2026-07 (pre-v2)/ABLETON_MCP_COMPARISON.md`):
+
+- **[bschoepke/ableton-live-mcp](https://github.com/bschoepke/ableton-live-mcp)** — the base. All upstream code (stdio MCP server, Remote Script bridge on port 8765, generic Live object access, `live_exec`, browser/plugin search, clip automation, AgentAudioTap, AgentM4L, visual capture) comes from here, MIT-licensed (see `LICENSE`).
+- **[ahujasid/ableton-mcp](https://github.com/ahujasid/ableton-mcp)** — design reference for the ergonomic wrappers. `live_create_midi_track`, `live_create_audio_track`, `live_rename_track`, `live_fire_clip`, `live_stop_clip`, and `live_set_tempo` port the intent of its named tools onto the bschoepke bridge; no code was copied.
+- **[Simon-Kansara/ableton-live-mcp-server](https://github.com/Simon-Kansara/ableton-live-mcp-server)** — evaluated as an AbletonOSC relay reference; nothing adopted (its local copy had a client/daemon protocol mismatch). Kept in the archive in case an OSC adapter is ever wanted.
+
+The lifecycle tools (`live_lifecycle_status`, `live_save_set`, `live_quit_ableton`) and `live_fade` are original additions from the July 2026 handoff work; details below.
+
 ## Local additions (this fork)
 
 This copy adds named lifecycle, convenience, and fade tools on top of upstream (server 0.2.0, Remote Script runtime `lifecycle-fade-wrappers-1`):
