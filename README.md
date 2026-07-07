@@ -2,7 +2,7 @@
 
 This is the active Ableton MCP v2 workspace: the upstream bschoepke/ableton-live-mcp foundation, extended with faster day-to-day Live controls, set lifecycle operations, and reliable fader automation. It is the repo to use when you want an agent that can actually operate inside Ableton, recover cleanly, and move from broad musical instructions to concrete clips, devices, routing, and mix changes.
 
-![Ableton MCP v2 infographic](abletoninfographic.jpg)
+![Ableton MCP v2 infographic](abletoninfographic.png)
 
 Ever wanted to control Ableton with just your voice? Me too! I made this MCP server so I could just ask Codex to do anything in Ableton Live for me, while I was nap-trapped by my baby.
 Unlike other Ableton MCPs I tried, this one can do pretty much anything that is possible via Ableton's Object model; the agent can just eval arbitrary python that runs inside Ableton. It also has some tools defined for common tasks so those work faster and more reliably. I had Codex CLI optimize this for hours with the new /goal command to prioritize low end-to-end latency, high reliability, low token usage, while maintaining full flexibility.
@@ -38,10 +38,6 @@ i want midi for everything but vocals please, with ableton devices. not prerende
 needs some fills
 and should hit way harder after "3-2-1 i become the sound"
 the vocals are squished too much (read too quickly), give them a little more length
-add some dynamics, the song is basically one volume. and some pumping side chain
-improve dynamics of the clap, seems a bit flat and indistinguished, want it harder after the 3-2-1 drop
-introduce a new element on a new track after the 3-2-1 drop, that comes in but then recedes before the final exit
-doesn't seem like the new thing has any notes
 the element is a bit muddy/indistinct. perhaps it needs simplification and more space, different instrument choice, i dunno
 
 https://youtu.be/cLCHEV1jWQo
@@ -60,6 +56,3 @@ You can tell it use third party plugins (VSTs, audio units) like Serum and Keysc
 Tell your agent to incorporate your existing vocal samples, including asking it to trim silence and transcribe your audio samples before creatively incorporating them into your live set
 Ask your agent to set up crazy user controlled DJ effects
 Experiment with VJ plugins like Videosync to make music videos driven by your live set
-## Maintainer notes
-The older source repos and planning notes are archived in ../_Archive 2026-07 (pre-v2)/; current operating conventions live in the ableton-hermes-operator skill under skills/.
-After editing src/ or Ableton_Live_MCP/bridge.py, sync the installed copy at ~/Documents/Codex/ableton-live-mcp, reinstall the Remote Script (python3 src/install_remote_script.py), and reload Live. Verify with live_ping; the runtime should report lifecycle-fade-wrappers-1 or later.
