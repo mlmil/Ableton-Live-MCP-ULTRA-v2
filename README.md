@@ -2,6 +2,8 @@
 
 This is the active Ableton MCP v2 workspace: the upstream bschoepke/ableton-live-mcp foundation, extended with faster day-to-day Live controls, set lifecycle operations, and reliable fader automation. It is the repo to use when you want an agent that can actually operate inside Ableton, recover cleanly, and move from broad musical instructions to concrete clips, devices, routing, and mix changes.
 
+![Ableton MCP v2 infographic](abletoninfographic.jpg)
+
 Ever wanted to control Ableton with just your voice? Me too! I made this MCP server so I could just ask Codex to do anything in Ableton Live for me, while I was nap-trapped by my baby.
 Unlike other Ableton MCPs I tried, this one can do pretty much anything that is possible via Ableton's Object model; the agent can just eval arbitrary python that runs inside Ableton. It also has some tools defined for common tasks so those work faster and more reliably. I had Codex CLI optimize this for hours with the new /goal command to prioritize low end-to-end latency, high reliability, low token usage, while maintaining full flexibility.
 Things you can use it for: create MIDI clips, insert audio files, general Ableton questions (with this, your agent can see your whole live set), add tracks with different devices and effects, analyze harmony, analyze audio signals at any point in the signal chain, generate spectrograms, clip automation, setting up mastering or vocal processing chains, insert MIDI the agent finds from the web... it's very general purpose, I'm not sure what the limits are.
@@ -59,5 +61,5 @@ Tell your agent to incorporate your existing vocal samples, including asking it 
 Ask your agent to set up crazy user controlled DJ effects
 Experiment with VJ plugins like Videosync to make music videos driven by your live set
 ## Maintainer notes
-The older source repos and planning notes are archived in ../_Archive 2026-07 (pre-v2)/; current operating conventions live in the ableton-hermes-operator skill under skills.
+The older source repos and planning notes are archived in ../_Archive 2026-07 (pre-v2)/; current operating conventions live in the ableton-hermes-operator skill under skills/.
 After editing src/ or Ableton_Live_MCP/bridge.py, sync the installed copy at ~/Documents/Codex/ableton-live-mcp, reinstall the Remote Script (python3 src/install_remote_script.py), and reload Live. Verify with live_ping; the runtime should report lifecycle-fade-wrappers-1 or later.
